@@ -1,14 +1,34 @@
+
 # NFA to DFA Converter
 
-This Python tool converts a Non-deterministic Finite Automaton (NFA) into a Deterministic Finite Automaton (DFA). It includes interactive input for NFA details, displays transition tables using
+This Python-based tool converts a **Non-deterministic Finite Automaton (NFA)** into a **Deterministic Finite Automaton (DFA)**. It features interactive user input, colorful and structured transition tables, and graphical visualization of the resulting DFA using DOT and `pydot`.
 
-## Installation
+---
+
+## 🔧 Features
+
+- Interactive CLI-based NFA input system
+- Dynamic construction of corresponding DFA
+- Beautifully formatted transition tables using `pandas` and `tabulate`
+- Automatic generation and display of DFA state diagrams (`dfa_graph.png`)
+- Highlights final DFA states
+- Graceful user experience with colors and prompts
+
+---
+
+## 📁 Repository
+
+**GitHub:** [NFA to DFA and DFA to NFA Converter](https://github.com/daniyalismail/Nfa_to_Dfa_and_Dfa_to_Nfa_Coverter)
+
+---
+
+## 🖥️ Installation
 
 Clone the repository and navigate to the `Theory of Computation` folder:
 
 ```bash
-git clone https://github.com/daniyalismail/Nfa_to_Dfa_and_Dfa_to_Nfa_Coverter.git of Computation.git
-cd Theory of Computation
+git clone https://github.com/daniyalismail/Nfa_to_Dfa_and_Dfa_to_Nfa_Coverter.git
+cd Nfa_to_Dfa_and_Dfa_to_Nfa_Coverter/Converter_Script
 ```
 
 Install dependencies using `pip`:
@@ -17,75 +37,97 @@ Install dependencies using `pip`:
 pip install -r requirements.txt
 ```
 
-## Usage
+---
 
-Run the `NFA_to_DFA.py` script to start the tool. Follow the prompts to input the number of states, transitions, state names, paths, and end states for each path. The script will output the NFA and DFA transition tables, identify final states of the DFA, and display a graphical representation of the DFA.
+## ▶️ Usage
 
-Example usage:
+Run the main script to launch the tool:
 
 ```bash
 python NFA_to_DFA.py
 ```
 
-## File Structure
+Follow the prompts to:
 
-- `NFA_to_DFA.py`: Main script for NFA to DFA conversion and visualization.
-- `requirements.txt`: List of dependencies.
-- `README.md`: This file, containing instructions and information about the project.
+- Input number of states and transitions
+- Enter each state's transitions
+- Define final NFA states
 
+The program will output:
 
-## Additional Information
+- NFA transition table
+- DFA transition table
+- Final states of the DFA
+- A visual DFA graph saved as `dfa_graph.png` and automatically opened
 
-For more details on the conversion process, examples of input and output, and how to contribute to the project, please refer to the `README.md` and `nfa_to_dfa.py` files within the `theory_of_computation` folder.
+---
 
-###Example Input:
+## 💡 Example
 
-No. of states : 2
-No. of transitions : 2
-state name : A
-path : a
-Enter end state from state A travelling through path a:
-B
-path : b
-Enter end state from state A travelling through path b:
-A
-state name : B
-path : a
-Enter end state from state B travelling through path a:
-A B
-path : b
-Enter end state from state B travelling through path b:
-B
-Enter final state of NFA :
-B
+### 🔢 Input
 
-#Example Output:
+```text
+No. of states: 2
+No. of transitions per state: 2
+Enter all symbols separated by space: a b
 
-NFA :-
-{'A': {'a': ['B'], 'b': ['A']}, 'B': {'a': ['A', 'B'], 'b': ['B']}}
+Enter name of state 1: A
+From state A, on input 'a', go to: B
+From state A, on input 'b', go to: A
 
-Printing NFA table :-
-╒═════╤════════╤════════╕
-│     │ a      │ b      │
-╞═════╪════════╪════════╡
-│ A   │ ['B']  │ ['A']  │
-├─────┼────────┼────────┤
-│ B   │ ['A', 'B'] │ ['B']  │
-╘═════╧════════╧════════╛
+Enter name of state 2: B
+From state B, on input 'a', go to: A B
+From state B, on input 'b', go to: B
 
-DFA :-
-{'A': {'a': 'B', 'b': 'A'}, 'B': {'a': 'AB', 'b': 'B'}, 'AB': {'a': 'AB', 'b': 'AB'}}
+Enter final states of NFA separated by space: B
+```
 
-Printing DFA table :-
-╒══════╤════════╤════════╕
-│      │ a      │ b      │
-╞══════╪════════╪════════╡
-│ A    │ B      │ A      │
-├──────┼────────┼────────┤
-│ B    │ AB     │ B      │
-├──────┼────────┼────────┤
-│ AB   │ AB     │ AB     │
-╘══════╧════════╧════════╛
+### 📊 Output
 
-Final states of the DFA are :  ['B', 'AB']
+```text
+Final states of DFA: B, AB
+Graph saved as dfa_graph.png
+```
 
+Transition tables are printed in a stylized format, and a DFA graph image is generated.
+
+---
+
+## 📁 File Structure
+
+```
+.
+├── NFA_to_DFA.py        # Main script
+├── requirements.txt     # Required Python packages
+└── README.md            # Project documentation
+```
+
+---
+
+## 📷 DFA Visualization
+
+A `.png` graph of the DFA is generated using `pydot` and DOT language. The graph highlights:
+- Final states with double circles
+- Dead states (if any) in gray
+- Transitions with labeled arrows
+
+---
+
+## 🧠 Authors
+
+- **M. Daniyal Ismail** (Roll No: 39)
+- **Mazin Imran** (Roll No: 23)
+
+Project developed as part of a Theory of Computation course.
+
+---
+
+## 🤝 Contributions
+
+Pull requests and contributions are welcome! Please ensure your changes are well-documented and tested.
+
+---
+
+## 📝 License
+
+This project is open-source and free to use for academic and learning purposes.

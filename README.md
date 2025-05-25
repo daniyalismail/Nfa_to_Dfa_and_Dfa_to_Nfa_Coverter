@@ -7,7 +7,7 @@ This Python tool converts a Non-deterministic Finite Automaton (NFA) into a Dete
 Clone the repository and navigate to the `Theory of Computation` folder:
 
 ```bash
-git clone https://github.com/daniyalismail/NFA-To-DFA-Converter_TOA_Project of Computation.git
+git clone https://github.com/daniyalismail/Nfa_to_Dfa_and_Dfa_to_Nfa_Coverter.git of Computation.git
 cd Theory of Computation
 ```
 
